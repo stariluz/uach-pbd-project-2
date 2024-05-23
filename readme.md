@@ -6,15 +6,15 @@ One Paragraph of project description goes here
 
 For testing this project you need to use the following command in the command line of your preference.
 
-'''
+```
 node app.js
-'''
+```
 
 ### Prerequisites
 
-Linux operating system
+- Linux operating system
 
-Docker
+- Docker
 
 You may need to install Node JS.
 
@@ -30,9 +30,9 @@ node -v
 
 Use the next command to clone this repository:
 
-'''
+```
 git clone git@github.com:Adrigondo/UACH-pbd-project-2.git
-'''
+```
 
 #### Docker hub
 
