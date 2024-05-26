@@ -14,7 +14,7 @@ http.createServer((request, response) => {
         });
     } else {
         const file = request.url == '/'
-            ? './WWW/indext.html'
+            ? './WWW/index.html'
             : `./WWW/${request.url}`;
         fs.readFile(file, (err, data) => {
             if (err) {
