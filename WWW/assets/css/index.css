@@ -1,0 +1,64 @@
+.main-section{
+    width: 100%;
+    background-color: black;
+    height: 400px;
+    color: white;
+    background-image: url('../img/banner.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0px 30px;
+    background-clip: calc(100% - 100px);
+}
+.main-section main{
+    height: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    text-align: end;
+}
+h1{
+    font-size: 4rem;
+    margin: 0;
+}
+.products-grill{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(300px, 1fr)); 
+    gap: 1rem;
+}
+.product{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    border-radius: 4px;
+    box-shadow: 1px 1px 10px 1px rgb(241, 241, 241);
+    overflow: hidden;
+}
+.product-image{
+    overflow: hidden;
+    position: relative;
+    height: 200px;
+    width: 100%;
+    min-width: 100%;
+    object-fit: cover;
+    object-position: 0 0;
+}
+.product-body{
+    padding: 0.5rem;
+}
+.product-name{
+    margin: 0;
+}
+.product--main{
+    text-decoration: none;
+    color: black;
+}
+.product--main .product-body::before{
+    content: "TOP SELLER";
+    position: absolute;
+    right: 10px;
+    font-size: smaller;
+    height: 8px;
+    background-color: rgb(255, 179, 0);
+    font-weight: 600;
+}
