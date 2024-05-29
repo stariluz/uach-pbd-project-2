@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nissan Frontier</title>
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/banners.css">
+    <link rel="stylesheet" href="../assets/css/forms.css">
+    <link rel="stylesheet" href="../assets/css/data-grill.css">
 </head>
+
 <body>
     <header class="page-header">
         <main>
@@ -18,46 +23,61 @@
             </nav>
         </main>
     </header>
-    <div>
-        <div class="main">
-            <div>
-                <img src="../../assets/img/3.jpeg">            
+
+    <section class="banner banner--secondary">
+        <main>
+            <div class="banner-background">
+                <img class="banner-background-img" src="../../assets/img/3.jpeg" alt="Banner Nissan Frontier" />
             </div>
-            <div>
-                <h2 class="carName">Nissan Frontier</h2>
-                <p><b>Car rental price</b></p>
-                <p class="price">$15/day</p>
-                <p><b>Passengers</b></p>
-                <p class="Passengers">5</p>
-                <p><b>Fuel Use</b></p>
-                <p class="fuel-use"> Medium</p>
+            <h1 class="banner-title">Nissan Frontier</h1>
+        </main>
+    </section>
+
+    <main>
+        <div class="data-grill">
+            <div class="data-item">
+                <h4 class="data-item-title">Car rental price</h4>
+                <p class="data-item-content">
+                    $15/day
+                </p>
             </div>
-            <div id="main-desc">
-                <h4>More about Nissan Frontier</h4>
-                <p>
-                    One of the most faithful cars at a great price, 
-                    medium performance and great style, perfect for trips within 
-                    and outside cities.
+            <div class="data-item">
+                <h4 class="data-item-title">Passengers</h4>
+                <p class="data-item-content">
+                    5
+                </p>
+            </div>
+            <div class="data-item">
+                <h4 class="data-item-title">Fuel use</h4>
+                <p class="data-item-content">
+                    Medium
                 </p>
             </div>
         </div>
-        <form action="rent-form">
-            <div id="rent-form">
-                <div>
-                    <label for="num-rent">Number of days to rent: </label>
-                    <input id="num-rent" name="num-rent" type="text">
-                </div>
-                <div>
-                    <label for="Name:">Name: </label>
-                    <input id="Name:" name="Name:" type="text">
-                </div>
-                <div>
-                    <label for="Phon">Phone Number: </label>
-                    <input id="Phon" name="Phon" type="text">
-                </div>
+        <h2>More about Nissan Frontier</h2>
+        <p>
+            One of the most faithful cars at a great price,
+            medium performance and great style, perfect for trips within
+            and outside cities.
+        </p>
+        <h2>Rent it!</h2>
+        <form id="rent-car-form-js" class="form" action="/rent-car">
+            <input id="carName" name="carName" type="text" value="Nissan Frontrier" hidden disabled>
+            <div>
+                <label for="daysNumber">Number of days to rent: </label>
+                <input id="daysNumber" name="daysNumber" type="text" placeholder="3" required>
             </div>
-            <button id="button">Rent</button>
+            <div>
+                <label for="name">Name: </label>
+                <input id="name" name="name" type="text" placeholder="Joe Doe" required>
+            </div>
+            <div>
+                <label for="phone">Phone Number: </label>
+                <input id="phone" name="phone" type="text" placeholder="614000000" required>
+            </div>
+            <button type="submit">Rent!</button>
         </form>
-    </div>
+    </main>
 </body>
+
 </html>

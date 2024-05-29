@@ -1,0 +1,11 @@
+.data-grill{
+    display: grid;
+    grid-template-columns: repeat(4, minmax(auto, 1fr));
+}
+.data-item-title{
+    margin: 0;
+    margin-bottom: 0.5rem;
+}
+.data-item-content{
+    margin-top: 0;
+}

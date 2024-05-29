@@ -13,21 +13,9 @@
     /* display: unset!important; */
     /* margin-inline: unset; */
 }
-.contact-us-form {
-    display: flex;
-    flex-direction: column;
+.form--contact-us{
     min-width: 450px;
-    gap: 1rem;
 }
-.contact-us-form .form-element{
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 0.5rem;
-}
-.contact-us-form input{
-    width: 100%;
-}
-.contact-us-form button{
+.form--contact-us.form button{
     width: fit-content;
-    /* padding: 1rem; */
 }

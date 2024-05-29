@@ -1,0 +1,88 @@
+.banner {
+    height: 400px;
+    color: white;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.banner-background {
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.banner-background-img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+.banner main {
+    position: relative;
+    z-index: 10;
+    height: 100%;
+}
+
+.banner main :not(.banner-background){
+    position: relative;
+    z-index: 0;
+}
+
+.banner .banner-title{
+    font-size: 4rem;
+    margin: 0;
+}
+
+.banner--main {
+    width: 100%;
+    background-color: black;
+}
+
+.banner--main .banner-background {
+    transform: translateY(25px);
+}
+
+.banner--main main{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    text-align: end;
+}
+.banner--secondary{
+    margin-top: 2rem;
+}
+.banner--secondary .banner-background {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.banner--secondary .banner-background::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: rgb(31, 13, 13);
+    background: -moz-linear-gradient(4deg, rgba(31, 13, 13, 1) 0%, rgba(255, 255, 255, 0) 25%);
+    background: -webkit-linear-gradient(4deg, rgba(31, 13, 13, 1) 0%, rgba(255, 255, 255, 0) 25%);
+    background: linear-gradient(4deg, rgba(31, 13, 13, 1) 0%, rgba(255, 255, 255, 0) 25%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1f0d0d", endColorstr="#ffffff", GradientType=1);
+}
+
+.banner--secondary main{
+    display: flex;
+    justify-content: start;
+    align-items: end;
+    text-align: start;
+    padding: 1.5rem 2rem;
+}
+.banner--secondary .banner-title{
+    font-size: 3rem;
+}
