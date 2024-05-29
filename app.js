@@ -2,15 +2,27 @@ const http = require('http');
 const fs = require(`fs`);
 
 http.createServer((request, response) => {
-    if (request.url == '/registro') {
-        let data = [];
+    if (request.url == '/registry'&&request.method === 'POST') {
+        let body = '';
         request.on("data", value => {
-            data.push(value);
+            body += value.toString();
         }).on("end", () => {
-            let params = Buffer.concat(data).toString();
-            response.writeHead(200, { "Content-Type": "text/plain" });
-            response.write(params);
-            response.end();
+            const data = JSON.parse(body);
+            const { name, phone, email } = data;
+
+            fs.appendFile('contacts.txt', `Name: ${name}, phone: ${phone}, email: ${email}\n`, (err) => {
+                if (err) {
+                    response.writeHead(404, { "Content-Type": "text/plain" });
+                    response.write("No se pudo enviar la información, intenta denuevo en un rato");
+                    response.end();
+                } else {
+                    console.log("Data written to file");
+                    response.writeHead(200, { "Content-Type": "text/plain" });
+                    response.end("Información enviada");
+                }
+
+            });
+
         });
     } else {
         const file = request.url == '/'
