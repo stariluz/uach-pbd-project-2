@@ -15,7 +15,7 @@ http.createServer((request, response) => {
     } else {
         const file = request.url == '/'
             ? './WWW/index.html'
-            : `./WWW/${request.url}`;
+            : `./WWW${request.url}`;
         fs.readFile(file, (err, data) => {
             if (err) {
                 response.writeHead(404, { "Content-Type": "text/plain" });
@@ -29,6 +29,9 @@ http.createServer((request, response) => {
                         break;
                     case 'html':
                         response.writeHead(200, { "Content-Type": "text/html" });
+                        break;
+                    case 'css':
+                        response.writeHead(200, { "Content-Type": "text/css" });
                         break;
                     case 'png':
                         response.writeHead(200, { "Content-Type": "image/png" });

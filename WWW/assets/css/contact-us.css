@@ -1,0 +1,33 @@
+.contact-us{
+    display: flex;
+    align-items: between;
+    justify-content: left;
+    align-items: top;
+    gap: 3rem;
+}
+.contact-us .contact-us-separator{
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    /* display: unset!important; */
+    /* margin-inline: unset; */
+}
+.contact-us-form {
+    display: flex;
+    flex-direction: column;
+    min-width: 450px;
+    gap: 1rem;
+}
+.contact-us-form .form-element{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.5rem;
+}
+.contact-us-form input{
+    width: 100%;
+}
+.contact-us-form button{
+    width: fit-content;
+    /* padding: 1rem; */
+}
