@@ -8,10 +8,17 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/banners.css">
     <link rel="stylesheet" href="../assets/css/forms.css">
+    <link rel="stylesheet" href="../assets/css/notifications.css">
     <link rel="stylesheet" href="../assets/css/data-grill.css">
 </head>
 
 <body>
+    <div class="notifications">
+        <div id="notification">
+            <p id="message"></p>
+        </div>
+    </div>
+
     <header class="page-header">
         <main>
             <h1><a href="../">AutoMax</a></h1>
@@ -61,11 +68,11 @@
             and outside cities.
         </p>
         <h2>Rent it!</h2>
-        <form id="rent-car-form-js" class="form" action="/rent-car">
-            <input id="carName" name="carName" type="text" value="Nissan Frontrier" hidden disabled>
+        <form id="rent-car-form-js" class="form form-js" action="/rent-car">
+            <input id="carName" name="carName" type="text" value="Nissan Frontrier" hidden readonly="true"/>
             <div>
                 <label for="daysNumber">Number of days to rent: </label>
-                <input id="daysNumber" name="daysNumber" type="text" placeholder="3" required>
+                <input id="daysNumber" name="daysNumber" type="number" placeholder="3" required>
             </div>
             <div>
                 <label for="name">Name: </label>
@@ -73,11 +80,13 @@
             </div>
             <div>
                 <label for="phone">Phone Number: </label>
-                <input id="phone" name="phone" type="text" placeholder="614000000" required>
+                <input id="phone" name="phone" type="tel" placeholder="614000000" required>
             </div>
             <button type="submit">Rent!</button>
         </form>
     </main>
+
+    <script src="../js/form.js"></script>
 </body>
 
 </html>

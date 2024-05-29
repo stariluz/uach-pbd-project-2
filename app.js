@@ -1,29 +1,61 @@
 const http = require('http');
 const fs = require(`fs`);
 
-http.createServer((request, response) => {
-    if (request.url == '/registry'&&request.method === 'POST') {
+http.createServer(async (request, response) => {
+    if (request.method === 'POST') {
         let body = '';
-        request.on("data", value => {
-            body += value.toString();
-        }).on("end", () => {
-            const data = JSON.parse(body);
-            const { name, phone, email } = data;
+        const data = await new Promise((resolve, reject) => {
+            request.on("data", value => {
+                body += value.toString();
+            }).on("end", () => {
+                const data = JSON.parse(body);
+                resolve(data);
+            }).on("error", (error) => {
+                reject(error);
+            });
+        });
+        if (data) {
+            console.log(request.url);
+            switch (request.url) {
+                case "/contact": {
+                    const { name, phone, email } = data;
 
-            fs.appendFile('contacts.txt', `Name: ${name}, phone: ${phone}, email: ${email}\n`, (err) => {
-                if (err) {
+                    fs.appendFile('contacts.txt', `Name: ${name}, phone: ${phone}, email: ${email}\n`, (err) => {
+                        if (err) {
+                            response.writeHead(404, { "Content-Type": "text/plain" });
+                            response.write("No se pudo enviar la información, intenta denuevo en un rato");
+                            response.end();
+                        } else {
+                            console.log("Data written to file");
+                            response.writeHead(200, { "Content-Type": "text/plain" });
+                            response.end("Información enviada");
+                        }
+                    });
+                    break;
+                }
+                case "/rent-car": {
+                    const { carName, daysNumber, name, phone, } = data;
+
+                    fs.appendFile('rent-cars.txt', `carName: ${carName}, daysNumber: ${daysNumber}, name: ${name}, phone: ${phone}\n`, (err) => {
+                        if (err) {
+                            response.writeHead(404, { "Content-Type": "text/plain" });
+                            response.write("No se pudo enviar la información, intenta denuevo en un rato");
+                            response.end();
+                        } else {
+                            console.log("Data written to file");
+                            response.writeHead(200, { "Content-Type": "text/plain" });
+                            response.end("Información enviada");
+                        }
+                    });
+                    break;
+                }
+                default: {
                     response.writeHead(404, { "Content-Type": "text/plain" });
                     response.write("No se pudo enviar la información, intenta denuevo en un rato");
                     response.end();
-                } else {
-                    console.log("Data written to file");
-                    response.writeHead(200, { "Content-Type": "text/plain" });
-                    response.end("Información enviada");
                 }
-
-            });
-
-        });
+            }
+        }
     } else {
         const file = request.url == '/'
             ? './WWW/index.html'

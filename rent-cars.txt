@@ -1,0 +1,1 @@
+carName: Volkswagen Jetta, daysNumber: 6, name: Stariluz Kozuki, phone: 614121231412

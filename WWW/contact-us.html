@@ -6,11 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AutoMax</title>
     <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/forms.css">
+    <link rel="stylesheet" href="./assets/css/forms.css">
+    <link rel="stylesheet" href="./assets/css/notifications.css">
     <link rel="stylesheet" href="./assets/css/contact-us.css">
 </head>
 
 <body>
+    <div class="notifications">
+        <div id="notification">
+            <p id="message"></p>
+        </div>
+    </div>
 
     <header class="page-header">
         <main>
@@ -22,11 +28,6 @@
                 </ul>
             </nav>
         </main>
-        <div class="notifications">
-            <div id="notification">
-                <p id="message"></p>
-            </div>
-        </div>
     </header>
     <main>
         <h1>Get In Touch</h1>
@@ -38,7 +39,7 @@
         <div class="contact-us">
             <section>
                 <h2>Send us your contact</h2>
-                <form id="contact-us-form-js" class="form form--contact-us" action="/registry" method="post">
+                <form id="contact-us-form-js" class="form form--contact-us form-js" action="/contact" method="post">
                     <div class="form-element">
                         <label for="name">Name: </label>
                         <input id="name" name="name" type="text" placeholder="Name" required>
@@ -71,9 +72,9 @@
             </p>
             <img class="pict" src="../assets/img/location.png" width="900px">
         </div>
-
     </main>
-    <script src="js/contact-us.js"></script>
+
+    <script src="js/form.js"></script>
 </body>
 
 </html>
