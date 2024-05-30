@@ -30,7 +30,12 @@ Array.from(document.getElementsByClassName("form-js")).forEach(($form) => {
                 })
             }
         }).then(
-            OnFormNext
+            data => {
+                OnFormNext(data);
+                setTimeout(() => {
+                    window.location.href = '/';
+                }, 2000);
+            }
         ).catch(onFormError);
     });
 })
