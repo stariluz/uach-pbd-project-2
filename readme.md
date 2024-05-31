@@ -36,7 +36,8 @@ git clone git@github.com:Adrigondo/UACH-pbd-project-2.git
 
 #### Docker hub
 
-**To be finished when the docker image is available online.**
+You may find the Docker image in the following link:
+https://hub.docker.com/r/hecmeduach/pbd_node_server
 
 ## Versioning
 
