@@ -1,6 +1,6 @@
-# Project Title
+# HTTP Server with NodeJS
 
-One Paragraph of project description goes here
+This project is a NodeJS-based server with the objective of promoting a *ficticious* car rental business. It manages communications between the browser and the server.
 
 ## Getting Started
 
@@ -12,18 +12,43 @@ node app.js
 
 ### Prerequisites
 
+#### Alternative 1
+
+- Linux operating system
+
+- NodeJS
+
+If you do not wish to use Docker, you may want to use NodeJS instead. You can get it in the following link: https://nodejs.org/en
+
+Check the version using the comand:
+
+```
+node -v
+```
+
+And then simply run:
+
+```
+node app.js
+```
+
+#### Alternative 2
+
 - Linux operating system
 
 - Docker
 
-You may need to install Node JS.
-
-You can get it in the following link: https://nodejs.org/en
-
-Check the vertion using the comand:
+Another alternative is to use the Docker image linked in this same document.
+For the latter case, use the following command to download it:
 
 ```
-node -v
+docker pull hecmeduach/pbd_node_server:latest   
+```
+
+Once that has been done, with the following command you can have the server up and running:
+
+```
+docker run -p 8888:8888 hecmeduach/pbd_node_server 
 ```
 
 ### Installing
@@ -55,5 +80,5 @@ This project is licensed under the MIT License - see the [license.txt](license.t
 
 ## Acknowledgments
 
-* A thank you to our teacher **Luis Antonio Ramirez Martinez** for the knowledge necessary to do this project.
+* Special thanks to our teacher **Luis Antonio Ramirez Martinez** for the knowledge necessary to do this project.
 
