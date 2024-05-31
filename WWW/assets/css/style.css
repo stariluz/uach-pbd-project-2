@@ -28,7 +28,7 @@ main {
 }
 
 body>main {
-    margin-bottom: 5rem;
+    margin-bottom: 8rem;
 }
 
 h1,
@@ -186,20 +186,20 @@ button:hover {
     background-color: rgb(205, 40, 40);
 }
 
-.page-footer {
+.page-footer-main {
     color: var(--text-color-1);
     height: 10rem;
     position: relative;
 }
 
-.page-footer main {
+.page-footer-main main {
     padding: 0 1rem;
     display: flex;
     justify-content: space-between;
     height: 100%;
 }
 
-.page-footer .sub {
+.page-footer-main .column-info {
     color: black;    
     flex: 1;
     display: block; /* Keep block display */
@@ -209,31 +209,32 @@ button:hover {
     margin: 30px 5px;
 }
 
-.page-footer .sub:last-child {
+.page-footer-main .column-info:last-child {
     border: none;
     margin-right: 0;
 }
 
-.page-footer .sub p, .page-footer .sub a {
+.page-footer-main .column-info p,
+.page-footer-main .column-info a {
     color: #ff0000;
     margin: 0;
 }
 
-.page-footer-er {
+.page-footer-copyright {
     background-color: #202020;
     color: var(--text-color-1);
     height: 2rem;
     position: relative;
 }
 
-.page-footer-er main {
+.page-footer-copyright main {
     padding: 0 1rem;
     display: flex;
     justify-content: space-between;
     height: 100%;
 }
 
-.page-footer-er p {
+.page-footer-copyright p {
     color: #808080;
     margin: 0;
     display: flex;

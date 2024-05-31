@@ -1,3 +1,4 @@
+const process = require('process')
 const http = require('http');
 const fs = require(`fs`);
 
@@ -93,3 +94,8 @@ http.createServer(async (request, response) => {
         })
     }
 }).listen(8888);
+
+process.on('SIGINT', () => {
+  console.info("Interrupted")
+  process.exit(0)
+})
