@@ -56,7 +56,7 @@ docker run -p 8888:8888 hecmeduach/pbd_node_server
 Use the next command to clone this repository:
 
 ```
-git clone git@github.com:Adrigondo/UACH-pbd-project-2.git
+git clone git@github.com:stariluz/UACH-pbd-project-2.git
 ```
 
 #### Docker hub
